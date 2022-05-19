@@ -1,0 +1,2 @@
+// usermentionchatassessment
+LOAD CSV FROM "https://raw.githubusercontent.com/xahram/catch_the_pink_flamingo/main/chat_mention_team_chat.csv" AS line,MERGE (c:ChatItem {id: line[0]}),MERGE (u:User {id: line[1]}),MERGE (c)-[:Mentioned{timeStamp: line[2]}]->(u)

@@ -1,0 +1,2 @@
+// chatrespondchatasessment1
+LOAD CSV FROM "https://raw.githubusercontent.com/xahram/catch_the_pink_flamingo/main/chat_respond_team_chat.csv" AS row MERGE (u1:User {id: row[0]}) MERGE (u2:User {id: row[1]}) MERGE (u1)-[:Respondsto{timeStamp: row[2]}]->(u2)
